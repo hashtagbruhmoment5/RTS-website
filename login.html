@@ -3,12 +3,32 @@
 <head>
 <meta charset="utf-8">
 <title>Untitled Document</title>
-</head>
-<form action="action_page.php" method="post">
-  <div class="imgcontainer">
-    <img src="https://th.bing.com/th/id/OIP.di0G5qg7291jzu2jrSDy3AAAAA?rs=1&pid=ImgDetMain" alt="Avatar" class="avatar">
-  </div>
+  <style>
+    body {
+      background-color: #ffffff;
+    }
 
+    .banner {
+      display: flex;
+      align-items: center;
+      background-color: #ff0000;
+      color: #ffffff;
+      padding: 20px;
+    }
+
+    img {
+      height: 100px;
+      width: auto;
+      margin-right: 20px;
+    }
+  </style>
+</head>
+  <div class="banner">
+    <img src="thiruvalluvar.png" alt="Thiruvalluvar">
+    <h1>Redmond Tamil School</h1>
+  </div>
+<form action="action_page.php" method="post">
+  <br>
   <div class="container">
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname" required><br>
