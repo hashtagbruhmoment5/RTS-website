@@ -65,6 +65,27 @@
     <button type="submit" class="registerbtn">Register</button>
   </div>
 
+  <script src="data.js"></script> <!-- Load data.js before using password array -->
+  <script>
+    function register() {
+      var passwordInput = document.getElementById("psw").value;
+
+      // Save the password to Local Storage
+      let passwords = JSON.parse(localStorage.getItem('passwords')) || [];
+      passwords.push(passwordInput);
+      localStorage.setItem('passwords', JSON.stringify(passwords));
+
+      console.log(passwords); // For debugging purposes
+      
+      alert("Password added successfully!");
+
+      // Redirect to the log-hrs.html page
+      window.location.href = "log-hrs.html";
+      
+      return false; // Prevent the default form submission
+    }
+  </script>
+
   <div class="container signin">
     <p>Already have an account? <a href="login.html">Sign in</a>.</p>
   </div>
