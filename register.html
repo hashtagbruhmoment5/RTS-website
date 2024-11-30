@@ -28,7 +28,7 @@
   <img src="thiruvalluvar.png" alt="Thiruvalluvar">
   <h1>Redmond Tamil School</h1>
 </div>
-<form onsubmit="return register();"> <!-- Removed action attribute -->
+<form action="register.php" method="POST">
   <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
@@ -52,14 +52,6 @@
     <label for="phone-number"><b>Phone Number:</b></label><br>
     <input type="text" placeholder="Phone Number" name="phone-number" id="phone-number" required><br>
       
-    <label for="company"><b>Company:</b></label><br>
-    <input type="text" placeholder="Company" name="company" id="company"><br>
-      
-    <label for="matching-funds"><b>Does your company give matching funds?</b></label><br>
-    <input type="radio" id="matching-funds-radiobutton1" name="matching-funds" value="yes">
-    <label for="matching-funds-radiobutton1">yes</label><br>
-    <input type="radio" id="matching-funds-radiobutton2" name="matching-funds" value="no">
-    <label for="matching-funds-radiobutton2">no</label><br>
       
     <hr>
     <button type="submit" class="registerbtn">Register</button>

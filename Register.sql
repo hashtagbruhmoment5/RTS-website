@@ -7,6 +7,3 @@ CREATE TABLE Register (
   Phone INT(10)
 );
 
-
-INSERT INTO Register(FirstName, LastName, Email, Password, Phone) VALUES ('Guna', 'Sen','guna.sen.2007@gmail.com','Lolol','2012109415');
-SELECT * FROM Register;
