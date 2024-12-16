@@ -1,8 +1,10 @@
 <?php
+session_start(); // Start the session
+
 $servername = "localhost";
 $username = "root"; 
-$password = "psw"; 
-$dbname = "rtswebsite"; 
+$password = "psw";  
+$dbname = "rtswebsite";     
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -26,8 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check if any rows were returned
     if ($result->num_rows > 0) {
-        // Login successful, redirect to log-hrs.php
-        header("Location: log-hrs.php");
+        // Login successful, set session variable
+        $_SESSION['user_email'] = $email; // Set the session variable
+        header("Location: log-hrs.php"); // Redirect to log-hrs.php
         exit(); // Ensure no further code is executed after the redirect
     } else {
         echo "Invalid email or password.";
