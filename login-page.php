@@ -1,3 +1,4 @@
+<?php include('register.php') ?>
 <!doctype html>
 <html>
 <head>
@@ -27,7 +28,7 @@
     <img src="thiruvalluvar.png" alt="Thiruvalluvar">
     <h1>Redmond Tamil School</h1>
   </div>
-<form action="action_page.php" method="post">
+<form action="login.php" method="post">
   <br>
   <div class="container">
     <label for="uname"><b>Username</b></label>

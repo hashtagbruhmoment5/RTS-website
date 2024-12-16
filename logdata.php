@@ -5,9 +5,9 @@ My computer would not let me download any apps because I forgot the admin passwo
 So I could not get an sql database set up. 
 This PHP below is just an example of how the code will probably look like.
 */
-$username = "example_username";//will be replaced with my actual username if I get it set up
+$username = "root";//will be replaced with my actual username if I get it set up
 $password = "example_password";//will be replaced with my actual password if I get it set up
-$dbname = "example_database";//will be replaced with my actual database name if I get it set up
+$dbname = "rtswebsite";//will be replaced with my actual database name if I get it set up
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

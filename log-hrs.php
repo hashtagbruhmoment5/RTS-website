@@ -1,3 +1,4 @@
+<?php include('logdata.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +67,7 @@
       </div>
 <h1></h1>
 <h2>Volunteer Hours Log</h2>
-<form action="log-hours.php" method="POST">
+<form action="logdata.php" method="POST">
     <label for="date">Date:</label>
     <input type="date" id="date" name="date" required>
 
