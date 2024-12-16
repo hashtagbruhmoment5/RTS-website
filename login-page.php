@@ -2,8 +2,9 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <link rel="icon" href="thiruvalluvar.png" type="image/png">
   <style>
     body {
       background-color: #ffffff;
@@ -28,23 +29,20 @@
     <img src="thiruvalluvar.png" alt="Thiruvalluvar">
     <h1>Redmond Tamil School</h1>
   </div>
-<form action="login.php" method="post">
+  <form action="login.php" method="post">
   <br>
   <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required><br>
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required><br>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required><br>
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required><br>
 
     <button type="submit">Login</button><br>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <span class="psw"><a href="register.html">Forgot password?</a></span>
+    <span class="psw"><a href="register-page.php">New? Sign up here</a></span>
   </div>
 </form>
 <body>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Register</title>
+    <link rel="icon" href="thiruvalluvar.png" type="image/png">
     <style>
         body {
             background-color: #ffffff;
@@ -57,7 +58,7 @@
         </div>
 
         <div class="container signin">
-            <p>Already have an account? <a href="login.html">Sign in</a>.</p>
+            <p>Already have an account? <a href="login-page.php">Sign in</a>.</p>
         </div>
     </form>
 </body>

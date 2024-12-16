@@ -1,31 +1,45 @@
 <?php
 $servername = "localhost";
-/*
-My computer would not let me download any apps because I forgot the admin password. 
-So I could not get an sql database set up. 
-This PHP below is just an example of how the code will probably look like.
-*/
-$username = "root";//will be replaced with my actual username if I get it set up
-$password = "example_password";//will be replaced with my actual password if I get it set up
-$dbname = "rtswebsite";//will be replaced with my actual database name if I get it set up
+$username = "root"; 
+$password = "psw"; 
+$dbname = "rtswebsite"; 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $firstName = $_POST['first_name']; // Get the first name from the form
     $date = $_POST['date'];
     $timeStarted = $_POST['time_started'];
     $timeEnded = $_POST['time_ended'];
     $activity = $_POST['activity'];
 
-    $stmt = $conn->prepare("INSERT INTO VolunteerHours (Date, TimeStarted, TimeEnded, Activity) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $date, $timeStarted, $timeEnded, $activity);
+    // Retrieve the user's Email and UserID based on the FirstName
+    $stmt = $conn->prepare("SELECT UserID, Email FROM Register WHERE FirstName = ?");
+    $stmt->bind_param("s", $firstName);
+    $stmt->execute();
+    $stmt->bind_result($userID, $email);
+    $stmt->fetch();
+    $stmt->close();
+
+    // Check if the user was found
+    if (!$userID || !$email) {
+        echo "Error: No user found with that first name.";
+        $conn->close();
+        exit();
+    }
+
+    // Prepare the insert statement for logdata
+    $stmt = $conn->prepare("INSERT INTO logdata (UserID, FirstName, Email, Date, TimeStarted, TimeEnded, Activity) VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("issssss", $userID, $firstName, $email, $date, $timeStarted, $timeEnded, $activity);
 
     if ($stmt->execute()) {
-        echo "Volunteer hours logged successfully";
+        echo "Volunteer hours logged successfully. <br>";
+        echo '<a href="log-hrs.php">Return to Log Hours</a>'; // Link to go back to log-hrs.php
     } else {
         echo "Error: " . $stmt->error;
     }
